@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(0, 0 ,0);
+    color:white;
+    margin:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    height: 100vh;
+}
+
+.container {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    width: 320px;
+    padding: 2vh 6vw 8vh 6vw;
+    background-color: rgb(48, 48, 48);
+}
+
+.head {
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.gameArea {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+}
+.cell {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    border-radius: 12px;
+    font-size: 4rem;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cell.disabled {
+    cursor: default;
+    color: #bbb;
+}
