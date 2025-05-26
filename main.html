@@ -9,9 +9,21 @@
 <body>
     <div class="container">
         <h2 class="head">Tic Tac Toe</h2>
+        <!--  Mode switcher between human and computer -->
+        <span class="toDisplay">
+            <b>Human</b>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <b>Computer</b>
+        </span>
+
+        
         <div id="statusCheck" class="status">
-            <h2>Status: </h2>
+            <h2>Status: <b id="status">Human</b></h2> <!-- Displaying the status here..... -->
         </div>
+        <!-- Displaying the cells for interaction. -->
         <div id="gameArea" class="gameArea">
             <div id="cell1" class="cell"> </div>
             <div id="cell2" class="cell"> </div>

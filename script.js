@@ -9,7 +9,9 @@ const winningcondition = {
     "369":true
 }
 const board = new Array(9);
-
+let currentTurn = "X";
+let currentMode;
 document.addEventListener('DOMContentLoaded', () => {
+    
     const status = document.getElementById('status');
 });
