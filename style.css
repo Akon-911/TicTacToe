@@ -23,12 +23,28 @@ body {
 
 
 .toDisplay {
-    display: inline-block;   
+    display: flex;
+    justify-content: center;
 }
 
-.toDisplay b {
-    font-size: 1.50rem;
-    margin-top: 15px;
+.toDisplay ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.toDisplay ul li {
+  margin: auto;
+  left:0;
+}
+
+.toDisplay ul li b {
+  font-size: 2rem;
+  margin: auto;
+  padding: auto;
+}
+.toDisplay ul li label {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 /* The switch - the box around the slider */
@@ -74,11 +90,11 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #000000;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #000000;
 }
 
 input:checked + .slider:before {
@@ -94,6 +110,33 @@ input:checked + .slider:before {
     gap: 10px;
 
 }
+
+.container button {
+    padding: 10px;
+    margin: auto;
+    margin-top: 45px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    font-size: 2rem;
+    font-weight: 650;
+    background-image: linear-gradient(to bottom right,rgb(33, 33, 33),rgb(0,0,0));
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    transition: 190ms ease-in-out;
+} 
+
+.container button:hover {
+    color:rgb(89, 89, 89);
+    background-image: linear-gradient(to bottom right,rgb(0,0,0), rgb(33, 33, 33));
+    background-color: black;
+}
+
 .cell {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid #fff;

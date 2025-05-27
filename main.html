@@ -11,17 +11,19 @@
         <h2 class="head">Tic Tac Toe</h2>
         <!--  Mode switcher between human and computer -->
         <span class="toDisplay">
-            <b>Human</b>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <b>Computer</b>
+            <ul>
+                <li><b>Human</b></li>
+                <li><label class="switch">
+                    <input type="checkbox" id="switcher" onclick="toCheck(this)">
+                    <span class="slider"></span>
+                </label></li>
+                <li><b>Computer</b></li>
+            </ul>
         </span>
 
         
         <div id="statusCheck" class="status">
-            <h2>Status: <b id="status">Human</b></h2> <!-- Displaying the status here..... -->
+            <h2>Status: <b id="status">To Start</b></h2> <!-- Displaying the status here..... -->
         </div>
         <!-- Displaying the cells for interaction. -->
         <div id="gameArea" class="gameArea">
@@ -35,6 +37,7 @@
             <div id="cell8" class="cell"> </div>
             <div id="cell9" class="cell"> </div>
         </div>
+        <button onclick="statusChanger(this)" id="btn">Start Game</button>
     </div>
 </body>
 </html>
