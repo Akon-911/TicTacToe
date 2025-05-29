@@ -1,5 +1,6 @@
 body {
     background-color: rgb(0, 0 ,0);
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0),rgb(56, 56, 56));
     color:white;
     margin:0;
     display: flex;
@@ -13,7 +14,7 @@ body {
     box-shadow: 0 8px 24px rgba(0,0,0,0.4);
     width: 320px;
     padding: 2vh 6vw 8vh 6vw;
-    background-color: rgb(48, 48, 48);
+    background-color: rgb(0, 0, 0);
 }
 
 .head {
@@ -90,11 +91,11 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #000000;
+  background-color: #585858;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #000000;
+  box-shadow: 0 0 1px #474747;
 }
 
 input:checked + .slider:before {
@@ -138,6 +139,8 @@ input:checked + .slider:before {
 }
 
 .cell {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid #fff;
     border-radius: 12px;
@@ -157,5 +160,10 @@ input:checked + .slider:before {
 
 .cell.disabled {
     cursor: default;
-    color: #bbb;
+    background-color: #2f2f2f;
+}
+
+.cell.win {
+  background-color: white;
+  color:black;
 }

@@ -12,6 +12,7 @@ function toCheck(checker) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("switcher").checked = (currentMode === "C");
     const status = document.getElementById('status');
     const ListOfCell = document.getElementsByClassName('cell');
     
@@ -22,15 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
             let CurrentCell = ListOfCell[i];
             if (CurrentCell.innerHTML === " ") {
                 CurrentCell.innerHTML = currentTurn;
+                CurrentCell.classList.add("disabled");
 
 
                 if (currentMode === "C" && currentTurn === "X") {
                     XArray.push(i+1);
-                    checkWin()
-                    setTimeout(() => {
-                        computerMove();
-                        checkWin();
-                    }, 500);
+                    checkWin();
+                    if (gameStart) {
+                        setTimeout(() => {
+                            computerMove();
+                            currentTurn = "X"
+                        }, 500);
+                    }
+
                 } else {
                     if (currentTurn === "X") {
                         XArray.push(i+1);
@@ -61,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (gameStart === true) {
             for (let i = 0; i <ListOfCell.length; i++) {
                 ListOfCell[i].innerHTML = " ";
+                ListOfCell[i].classList.remove("disabled","win");
             }
         }
     });
@@ -73,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let el = winningCondition[i];
             const ArrayToCheck = (currentTurn === "X") ? XArray : OArray;
             if ((ArrayToCheck.includes(el[0]) && ArrayToCheck.includes(el[1])) && ArrayToCheck.includes(el[2])) {
+                ListOfCell[el[0]-1].classList.add("win");ListOfCell[el[1]-1].classList.add("win");ListOfCell[el[2]-1].classList.add("win");  
+                console.log(el);              
                 hasWon = true;
                 break;
             }
@@ -90,12 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function computerMove() {
+        currentTurn = "O";
         let availableCells = Array.from(ListOfCell).filter(cell => cell.innerHTML === " ");
         if (availableCells.length > 0) {
             let randomCell = availableCells[Math.floor(Math.random() * availableCells.length)];
             randomCell.innerHTML = "O";
+            randomCell.classList.add("disabled")
             OArray.push(Array.from(ListOfCell).indexOf(randomCell) + 1);
-            currentTurn = "X";
+            checkWin();
         }
     }
 });
